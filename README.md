@@ -10,7 +10,7 @@ The goal is to showcase **domain switching**: changing the data source simply by
 - Fetch daily market data (price, volume, % change, etc.)  
 - Supports multiple data sources:
     - APIs (preferred when available, e.g., Yahoo Finance API / `yfinance`)
-    - Scraping public websites (HTML parsing) ⚠️ [See Notes](#notes)
+    - Scraping public websites (HTML parsing)
 - Clean and normalize retrieved data
 - Update local tables (CSV or SQLite)
 - Automatic deduplication (only insert new rows)
@@ -23,21 +23,21 @@ The goal is to showcase **domain switching**: changing the data source simply by
 
     project-root/
     │
-    ├─ config/              # Data sources list and scraping/API settings
+    ├─ config/              
     │   └─ config.yml
     │
-    ├─ data/                # Generated dataset (CSV/SQLite)
+    ├─ data/                
     │   ├─ prices.csv
     │   └─ prices.sqlite
     │
     ├─ scraper/
-    │   ├─ fetcher.py       # Source-agnostic data downloader (API or HTML)
-    │   ├─ parser.py        # Cleans / normalizes data
-    │   ├─ updater.py       # Updates CSV/SQLite tables
-    │   └─ utils.py         # Logging, retries, helpers
+    │   ├─ fetcher.py       
+    │   ├─ parser.py        
+    │   ├─ updater.py       
+    │   └─ utils.py         
     │
-    ├─ demo.py              # Main demo script
-    └─ README.md            # This file
+    ├─ demo.py              
+    └─ README.md            
 
 ---
 
@@ -77,12 +77,19 @@ Edit `config/config.yml`:
 4. Updates the local table
 5. Logs:
 
-        Ticker NVDA updated: +1 row (2025-11-07)
-        Source A failed → fallback to source B
+    Ticker NVDA updated: +1 row (2025-11-07)
+    Source A failed → fallback to source B
 
 ---
 
-## 🧩 Extend the project
+## 📝 Project Notes
+- ⚠️ HTML scraping is not yet implemented.
+- The demo currently fetches data only via `yfinance`.
+- Logging and error handling are basic; advanced fallback is not active.
+
+---
+
+## 🧩 Extend the Project
 - Add asynchronous fetching (`aiohttp`)
 - Visual dashboard with Streamlit
 - Automate execution via cron/Task Scheduler
@@ -90,8 +97,10 @@ Edit `config/config.yml`:
 
 ---
 
-## ⚠️ Notes
-- ⚠️ HTML scraping is **not yet implemented**.  
+## ⚖️ Legal / Compliance
+- ✅ Use APIs whenever possible (clean & legal)
+- ❌ Do not bypass paywalls, CAPTCHA, or restricted data
+- Scraping must follow websites' Terms of Service
 
 ---
 
