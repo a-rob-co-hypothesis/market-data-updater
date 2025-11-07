@@ -1,0 +1,4 @@
+source: "yfinance"
+tickers: ["AAPL", "TSLA", "NVDA"]
+frequency: "daily"
+storage: "csv"

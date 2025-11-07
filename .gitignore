@@ -1,0 +1,24 @@
+# Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual environment
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data folder
+data/*
+!data/prices.csv  # inclure le CSV principal de test
+
+# Previews générés
+data/prices_preview.md
+data/prices_preview.html
+
+# Environment / secrets
+.env
