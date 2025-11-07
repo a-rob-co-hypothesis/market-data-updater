@@ -1,24 +1,12 @@
-# Python compiled files
-__pycache__/
+# Ignorer les fichiers générés
+data/*.md
+data/*.html
+
+# Ne pas ignorer le CSV principal
+!data/prices.csv
+
+# Ignorer Python cache et venv
 *.pyc
-*.pyo
-*.pyd
-*.log
-
-# Virtual environment
+__pycache__/
 venv/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Data folder
-data/*
-!data/prices.csv  # inclure le CSV principal de test
-
-# Previews générés
-data/prices_preview.md
-data/prices_preview.html
-
-# Environment / secrets
 .env

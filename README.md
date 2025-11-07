@@ -10,7 +10,7 @@ The goal is to showcase **domain switching**: changing the data source simply by
 - Fetch daily market data (price, volume, % change, etc.)  
 - Supports multiple data sources:
     - APIs (preferred when available, e.g., Yahoo Finance API / `yfinance`)
-    - Scraping public websites (HTML parsing)
+    - Scraping public websites (HTML parsing) ⚠️ [See Notes](#notes)
 - Clean and normalize retrieved data
 - Update local tables (CSV or SQLite)
 - Automatic deduplication (only insert new rows)
@@ -77,8 +77,8 @@ Edit `config/config.yml`:
 4. Updates the local table
 5. Logs:
 
-    Ticker NVDA updated: +1 row (2025-11-07)
-    Source A failed → fallback to source B
+        Ticker NVDA updated: +1 row (2025-11-07)
+        Source A failed → fallback to source B
 
 ---
 
@@ -90,10 +90,8 @@ Edit `config/config.yml`:
 
 ---
 
-## ⚠️ Notes on legality / scraping
-- ✅ Use APIs whenever possible (clean & legal)
-- ❌ Do not bypass paywalls, CAPTCHA, or restricted data
-- Scraping must follow websites' Terms of Service
+## ⚠️ Notes
+- ⚠️ HTML scraping is **not yet implemented**.  
 
 ---
 
